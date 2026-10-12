@@ -1,0 +1,34 @@
+name: Build CV
+
+on:
+  push:
+    paths:
+      - cv.tex
+      - .github/workflows/cv.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: WtfJoke/setup-tectonic@5e1ba6e10229bd876c6594189bdab1a62b9d0b1c # v4.0.6
+        with:
+          tectonic-version: 0.17.0
+      - name: Compile PDF
+        run: |
+          mkdir -p build
+          tectonic --keep-logs --outdir build cv.tex
+      - name: Save PDF and compilation log
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: weichen-zhang-cv
+          path: |
+            build/cv.pdf
+            build/cv.log
+          if-no-files-found: error
+          retention-days: 30

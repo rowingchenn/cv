@@ -1,0 +1,121 @@
+% Standalone academic CV. Edit content below; no external class, font, or bib file.
+% Compile with pdfLaTeX (two passes) or the built-in LaTeX editor.
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,left=0.68in,right=0.68in,top=0.55in,bottom=0.55in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% restrained typography: serif text, small sans-serif section labels, blue links
+\definecolor{ink}{HTML}{20262E}
+\definecolor{muted}{HTML}{59616B}
+\definecolor{accent}{HTML}{244A68}
+\definecolor{rulegray}{HTML}{CBD1D6}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,
+  pdftitle={Weichen Zhang -- Curriculum Vitae},pdfauthor={Weichen Zhang},
+  pdfsubject={Agentic intelligence, evaluation, and open research infrastructure}}
+\urlstyle{same}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+\color{ink}
+\titleformat{\section}{\sffamily\bfseries\small\color{accent}}{}{0pt}{}
+  [\vspace{-5pt}{\color{rulegray}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+\setlist[itemize]{leftmargin=12pt,label=\textbullet,itemsep=1pt,
+  topsep=2pt,parsep=0pt,partopsep=0pt}
+\newcommand{\entry}[4]{%
+  \textbf{#1}\hfill{\small #2}\par
+  {\small #3\hfill\textcolor{muted}{#4}}\par}
+\newcommand{\paper}[3]{%
+  \textbf{#1}\par
+  {\small #2}\par
+  {\small #3}\par\vspace{4pt}}
+\newcommand{\me}{\textbf{Weichen Zhang}}
+\newcommand{\sep}{\enspace\textcolor{muted}{\textbar}\enspace}
+
+\begin{document}
+
+% CONTACT
+{\fontsize{25}{28}\selectfont\bfseries Weichen Zhang}\par
+\vspace{4pt}
+Ph.D. Student in Data Science\sep University of California, San Diego\par
+\vspace{3pt}
+{\small
+\href{mailto:weichenzhang339@gmail.com}{weichenzhang339@gmail.com}\sep
+\href{https://scholar.google.com/citations?user=5BgyLQ8AAAAJ&hl=en}{Google Scholar}\sep
+\href{https://github.com/rowingchenn}{github.com/rowingchenn}}
+
+\section{RESEARCH INTERESTS}
+Evaluating agentic intelligence on meaningful tasks, with open infrastructure for reproducible evaluation and training.
+\par\vspace{3pt}
+\textbf{Current work:} Advancing ALE v2 with more general evaluation infrastructure and standards for frontier agents.
+
+\section{EDUCATION}
+% Start date awaits clarification: old CV says 2025; current description says first year.
+\entry{University of California, San Diego}{Present}
+  {Ph.D. in Data Science, Hal\i c\i o\u glu Data Science Institute}{Advisor: Yian Ma}
+\vspace{4pt}
+\entry{Tongji University}{Sept. 2021 -- July 2025}
+  {B.Eng. in Software Engineering}{GPA: 90.24/100; top 5\%}
+\vspace{3pt}
+{\small Visiting student, UC Berkeley, Berkeley Global Access Program\hfill Aug. -- Dec. 2024}\par
+
+\section{SELECTED PUBLICATIONS \& MANUSCRIPTS}
+\paper{Agents' Last Exam}
+  {Yiyou Sun, Xinyang Han, \me, et al.}
+  {arXiv preprint, 2026.\enspace
+   \href{https://arxiv.org/abs/2606.05405}{Paper}\sep
+   \href{https://agents-last-exam.org}{Project}\sep
+   \href{https://github.com/rdi-berkeley/agents-last-exam}{Code}}
+\paper{CUA-Lite: An Open Platform for Computer Use Agents}
+  {Zhanhui Zhou, \me, Haoran Liu, Lingjie Chen, Tianneng Shi, Kevin Lin, Zhengyuan Yang, Lijuan Wang, Dawn Song.}
+  {Under review at ICLR 2027.\enspace
+   \href{https://cua-lite.github.io}{Project}\sep
+   \href{https://github.com/cua-lite/cua-lite}{Code}}
+% MIRAGE-Bench's final venue is pending confirmation; retain verified preprint.
+\paper{MIRAGE-Bench: LLM Agent is Hallucinating and Where to Find Them}
+  {\me, Yiyou Sun, Pohao Huang, Jiayue Pu, Heyue Lin, Dawn Song.}
+  {arXiv preprint, 2025.\enspace
+   \href{https://arxiv.org/abs/2507.21017}{Paper}\sep
+   \href{https://github.com/sunblaze-ucb/mirage-bench}{Code}}
+\paper{IS-Bench: Evaluating Interactive Safety of VLM-Driven Embodied Agents in Daily Household Tasks}
+  {Xiaoya Lu, Zeren Chen, Xuhao Hu, Yijin Zhou, \me, Dongrui Liu, Lu Sheng, Jing Shao.}
+  {AAAI 2026.\enspace
+   \href{https://doi.org/10.1609/aaai.v40i42.40880}{Paper}\sep
+   \href{https://github.com/AI45Lab/IS-Bench}{Code}}
+
+\section{RESEARCH EXPERIENCE}
+\entry{University of California, Berkeley}{Mar. -- Sept. 2026}
+  {Visiting Researcher, full-time and on-site}{Host: Dawn Song}
+\begin{itemize}
+  \item \textbf{Agents' Last Exam (ALE).} Core contributor; led engineering and experiments for evaluating frontier agents on economically valuable, real-world tasks, including the codebase and evaluation infrastructure.
+  \item \textbf{CUA-Lite.} Co-developed open infrastructure for computer-use agents, unifying data pipelines, evaluation, and training across desktop, browser, and mobile environments; second author of the paper.
+\end{itemize}
+\vspace{4pt}
+\entry{ByteDance Seed}{Sept. 2025 -- Feb. 2026}
+  {Research Intern, Global Data}{Beijing, China}
+\begin{itemize}
+  \item Studied LLM reasoning efficiency; curated and analyzed reinforcement-learning data and ran ablations to assess its impact on model capabilities.
+\end{itemize}
+\vspace{4pt}
+\entry{University of California, Berkeley}{Aug. 2024 -- June 2025}
+  {Research Assistant}{Mentors: Yiyou Sun and Dawn Song}
+\begin{itemize}
+  \item Led \textbf{MIRAGE-Bench}, using reproducible contextual snapshots and fine-grained evaluation to study hallucinations in interactive LLM agents.
+\end{itemize}
+\vspace{4pt}
+\entry{Shanghai AI Laboratory}{Mar. -- June 2025}
+  {Research Intern}{Mentors: Dongrui Liu and Jing Shao}
+\begin{itemize}
+  \item Contributed to \textbf{IS-Bench} through safety scenario design, process-oriented evaluation, and analysis of safety--performance trade-offs in embodied agents.
+\end{itemize}
+
+\end{document}
